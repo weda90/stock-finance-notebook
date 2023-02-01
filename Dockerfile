@@ -6,7 +6,9 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
 
-RUN apt-get install build-essential
+RUN apt-get update --yes && \
+    apt-get install --yes --no-install-recommends \
+    build-essential
 RUN wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
 RUN tar -xzf ta-lib-0.4.0-src.tar.gz
 RUN cd ta-lib && ./configure --prefix=/usr && make && sudo make install
