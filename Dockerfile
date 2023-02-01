@@ -6,12 +6,12 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
 
-RUN "wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz"
-RUN "tar -xzf ta-lib-0.4.0-src.tar.gz"
-RUN "cd ta-lib/"
-RUN "./configure --prefix=/usr"
-RUN "make"
-RUN "sudo make install"
+RUN wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
+RUN tar -xzf ta-lib-0.4.0-src.tar.gz
+RUN cd ta-lib/
+RUN ./configure --prefix=/usr
+RUN make
+RUN sudo make install
 
 USER ${NB_UID}
 
