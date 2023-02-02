@@ -16,3 +16,4 @@ RUN cd ta-lib && ./configure --prefix=/usr && make && sudo make install
 USER ${NB_UID}
 
 RUN pip install yfinance TA-Lib backtrader backtesting
+RUN pip install matplotlib
