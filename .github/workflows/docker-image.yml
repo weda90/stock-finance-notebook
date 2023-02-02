@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: weda90/notebook-stock-finance:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/notebook-stock-finance:latest
